@@ -3,9 +3,8 @@
 import Link from 'next/link';
 import { categoryItems } from '../lib/categoryItems';
 import Image from 'next/image';
-import { useParams, usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
-import path from 'node:path/win32';
 import { cn } from '@/lib/utils';
 
 export function MapFilterItems() {
