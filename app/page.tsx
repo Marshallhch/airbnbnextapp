@@ -69,7 +69,10 @@ async function ShowItems({
   return (
     <>
       {data.length === 0 ? (
-        <NoItems />
+        <NoItems
+          description="Please check a category or create your own listings!"
+          title="Sorry no listings for this category found..."
+        />
       ) : (
         <div className="grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
           {data.map((item) => (
@@ -83,6 +86,7 @@ async function ShowItems({
               favoritId={item.Favorite[0]?.id}
               isInFavoritList={item.Favorite.length > 0 ? true : false}
               homeId={item.id}
+              pathName="/"
             />
           ))}
         </div>

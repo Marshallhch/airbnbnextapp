@@ -27,7 +27,13 @@ export function AddToFavoriteButton() {
   return (
     <>
       {pending ? (
-        <div></div>
+        <Button
+          variant="outline"
+          size="icon"
+          disabled
+          className="bg-primary-foreground">
+          <Loader2 className="w-4 h-4 animate-spin text-primary" />
+        </Button>
       ) : (
         <Button
           variant="outline"
@@ -35,6 +41,31 @@ export function AddToFavoriteButton() {
           className="bg-primary-foreground"
           type="submit">
           <Heart className="w-4 h-4" />
+        </Button>
+      )}
+    </>
+  );
+}
+
+export function DeleteFromFavoriteButton() {
+  const { pending } = useFormStatus();
+  return (
+    <>
+      {pending ? (
+        <Button
+          variant="outline"
+          size="icon"
+          disabled
+          className="bg-primary-foreground">
+          <Loader2 className="w-4 h-4 animate-spin text-primary" />
+        </Button>
+      ) : (
+        <Button
+          variant="outline"
+          size="icon"
+          className="bg-primary-foreground"
+          type="submit">
+          <Heart className="w-4 h-4 text-primary" fill="#e21c49" />
         </Button>
       )}
     </>
