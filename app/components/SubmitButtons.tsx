@@ -31,7 +31,8 @@ export function AddToFavoriteButton() {
           variant="outline"
           size="icon"
           disabled
-          className="bg-primary-foreground">
+          className="bg-primary-foreground"
+        >
           <Loader2 className="w-4 h-4 animate-spin text-primary" />
         </Button>
       ) : (
@@ -39,7 +40,8 @@ export function AddToFavoriteButton() {
           variant="outline"
           size="icon"
           className="bg-primary-foreground"
-          type="submit">
+          type="submit"
+        >
           <Heart className="w-4 h-4" />
         </Button>
       )}
@@ -56,7 +58,8 @@ export function DeleteFromFavoriteButton() {
           variant="outline"
           size="icon"
           disabled
-          className="bg-primary-foreground">
+          className="bg-primary-foreground"
+        >
           <Loader2 className="w-4 h-4 animate-spin text-primary" />
         </Button>
       ) : (
@@ -64,8 +67,27 @@ export function DeleteFromFavoriteButton() {
           variant="outline"
           size="icon"
           className="bg-primary-foreground"
-          type="submit">
+          type="submit"
+        >
           <Heart className="w-4 h-4 text-primary" fill="#e21c49" />
+        </Button>
+      )}
+    </>
+  );
+}
+
+export function ReservationSubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <>
+      {pending ? (
+        <Button className="w-full" disabled>
+          <Loader2 className="w-4 h-4 animate-spin mr-2" /> Please wait...
+        </Button>
+      ) : (
+        <Button className="w-full" type="submit">
+          Make a Reservation
         </Button>
       )}
     </>
