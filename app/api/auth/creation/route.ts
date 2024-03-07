@@ -31,5 +31,7 @@ export async function GET() {
     });
   }
 
-  return NextResponse.redirect('http://localhost:3000/');
+  return NextResponse.redirect(
+    'https://airbnbnextapp-8cshb4gr0-marshallhchs-projects.vercel.app/'
+  );
 }
